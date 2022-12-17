@@ -2,7 +2,12 @@
 <div class="relative-wrapper">
   <div class="backdrop" [class.show]="show"></div>
   <div class="ui">
-    <img class="category-icon" [src]="category.iconUrl" [class.show]="show">
+    <div class="icon-area" [class.show]="show">
+      <img class="category-icon" [src]="category.iconUrl">
+      <div class="stamp-wrapper">
+        <img class="stamp" src="assets/stamps/popper.png" [class.show]="showStamp">
+      </div>
+    </div>
     <div class="category-name" [class.show]="show">{{category.name}}</div>
   </div>
 </div>

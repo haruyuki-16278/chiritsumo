@@ -13,6 +13,8 @@ export class ResultComponent {
   @Input() show!: boolean
   @Output() canRemove: EventEmitter<void> = new EventEmitter()
 
+  showStamp = false
+
   constructor (
     private zone: NgZone,
     private confetti: ConfettiService
@@ -37,9 +39,12 @@ export class ResultComponent {
         this.confetti.star(Math.random(), Math.random())
       }, () => {}, () => {
         timer(1000).subscribe(() => {
-          this.show = false
-          timer(400).subscribe(() => {
-            this.canRemove.emit()
+          this.showStamp = true
+          timer(1500).subscribe(() => {
+            this.show = false
+            timer(400).subscribe(() => {
+              this.canRemove.emit()
+            })
           })
         })
       })
