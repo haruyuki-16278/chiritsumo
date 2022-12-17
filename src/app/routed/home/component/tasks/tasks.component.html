@@ -1,15 +1,10 @@
-<p>tasks works!</p>
 <carousel [cellsToShow]="3" [arrows]="false">
   <div class="carousel-cell">
-      <img src="path_to_image">
+  </div>
+  <div class="carousel-cell" *ngFor="let category of categories">
+    <img class="category-icon" [src]="category.iconUrl">
+    <div>{{category.name}}</div>
   </div>
   <div class="carousel-cell">
-    <img src="path_to_image">
-  </div>
-  <div class="carousel-cell">
-    <img src="path_to_image">
-  </div>
-  <div class="carousel-cell">
-    <img src="path_to_image">
   </div>
 </carousel>
