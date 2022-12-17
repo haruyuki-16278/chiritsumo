@@ -17,24 +17,68 @@ export class TasksComponent implements OnInit {
 
   categories: Category[] = [
     {
-      iconUrl: 'assets/categories/clean.png',
-      name: '掃除',
+      iconUrl: 'assets/categories/bunbetu.png',
+      name: 'ごみのぶんべつ',
       isComplete: false,
       missions: [
         {
-          beanKnowledges: ['豆知識だよー'],
-          title: '掃除をしよう！'
+          title: 'もえるごみのなかにトレーがはいっていないかたしかめよう',
+          beanKnowledges: ['なっとうのパックはもえるごみ！', 'つまようじがかんたんにささったらリサイクルできるトレーだよ']
+        }, {
+          title: 'もえるごみのなかにぎゅうにゅうパックがはいっていないかたしかめよう',
+          beanKnowledges: ['うらがわがぎんいろだったらじつはもえるゴミなんだよ']
+        },
+      ]
+    }, {
+      iconUrl: 'assets/categories/gomidashi.png',
+      name: 'ごみだし',
+      isComplete: false,
+      missions: [
+        {
+          title: 'だんぼーるをまとめよう',
+          beanKnowledges: [
+            'あめとゆきのひにはださないでね',
+            'だんぼーるはとかしてリサイクルされるよ',
+            'だんぼーるはほぼぜんぶリサイクルされているよ'
+          ],
+        }, {
+          title: 'しんぶんしをまとめよう',
+          beanKnowledges: ['あめとゆきのひにはださないでね', 'ちらしはざっしといっしょにまとめてね']
+        }, {
+          title: 'いらないふくをまとめよう',
+          beanKnowledges: ['あめとゆきのひにはださないでね', 'まとめたふくはがいこくのひとたちにプレゼントされるよ']
+        }, {
+          title: 'あきかんをまとめよう',
+          beanKnowledges: ['ふたもあきかんといっしょにだそう', 'プルトップははずさずにそのままだそう', 'つぶさずにだそう']
         }
       ]
     }, {
-      iconUrl: 'assets/categories/senntaku.png',
-      name: '分別',
-      isComplete: true,
+      iconUrl: 'assets/categories/clean.png',
+      name: 'おそうじ',
+      isComplete: false,
       missions: [
         {
-          beanKnowledges: ['ペットボトルはキャップが硬い'],
-          title: '分別をする'
-        }
+          title: 'リビングにきれいにしよう',
+          beanKnowledges: [
+            'ぞうきんはえどじだいからつかわれはじめたよ',
+            'えひめけんではながいろうかをぞうきんがけするレースがあるよ',
+            'ほうきはへいあんじだいからつかわれはじめたよ'
+          ]
+        }, {
+          title: 'じぶんのへやをきれいにしよう',
+          beanKnowledges: [
+            'ぞうきんはえどじだいからつかわれはじめたよ',
+            'えひめけんではながいろうかをぞうきんがけするレースがあるよ',
+            'ほうきはへいあんじだいからつかわれはじめたよ'
+          ]
+        }, {
+          title: 'おふろをきれいにしよう',
+          beanKnowledges: [
+            'ぞうきんはえどじだいからつかわれはじめたよ',
+            'えひめけんではながいろうかをぞうきんがけするレースがあるよ',
+            'ほうきはへいあんじだいからつかわれはじめたよ'
+          ]
+        }, 
       ]
     }
   ]
