@@ -27,6 +27,29 @@
       }
     }
 
+    .cancel-button {
+      position: absolute;
+      top: 32px;
+      left: 32px;
+      transition: opacity var(--transition-time);
+      opacity: 0;
+      border-radius: 16px;
+      background-color: transparent;
+      border-color: white;
+      color: white;
+      border: solid 4px white;
+      font-weight: bold;
+      font-size: 18px;
+      width: 38px;
+      height: 38px;
+
+      &.show {
+        opacity: 1;
+      }
+
+      z-index: 30;
+    }
+
     .ui {
       position: absolute;
       top: 0;

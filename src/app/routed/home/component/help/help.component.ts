@@ -33,7 +33,6 @@ export class HelpComponent {
   ngOnInit (): void {
     const random = Math.floor(Math.random() * this.category.missions.length)
     this.mission = this.category.missions[random]
-    console.log(this.mission)
   }
 
   onEndClick (): void {

@@ -1,6 +1,7 @@
 
 <div class="relative-wrapper">
   <div class="backdrop" [class.show]="show"></div>
+  <button [class.show]="show" class="cancel-button" (click)="onCancelClick()">X</button>
   <div class="ui">
     <img class="category-icon" [src]="category.iconUrl" [class.show]="show">
     <div class="category-name" [class.show]="show">{{category.name}}</div>

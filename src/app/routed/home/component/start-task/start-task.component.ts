@@ -11,6 +11,7 @@ export class StartTaskComponent {
   @Input() category!: Category
   @Input() show!: boolean
   @Output() canRemove: EventEmitter<void> = new EventEmitter()
+  @Output() cancel: EventEmitter<void> = new EventEmitter()
 
   constructor (
     private zone: NgZone
@@ -27,5 +28,12 @@ export class StartTaskComponent {
 
   onStartClick (): void {
     this.canRemove.emit()
+  }
+
+  onCancelClick (): void {
+    this.show = false
+    timer(400).subscribe(() => {
+      this.cancel.emit()
+    })
   }
 }

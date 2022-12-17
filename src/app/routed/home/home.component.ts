@@ -27,6 +27,13 @@ export class HomeComponent {
     this.cdRef.detectChanges()
   }
 
+  backToCategoryScreen (): void {
+    this.showCategoriesScreen = true
+    this.showStartScreen = false
+    this.showHelpScreen = false
+    this.showResultScreen = false
+  }
+
   closeStartScreen (): void {
     this.showHelpScreen = true
     timer(500).subscribe(() => {

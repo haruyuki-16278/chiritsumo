@@ -12,6 +12,7 @@
   *ngIf="showStartScreen && showingCategory"
   [show]="showStartScreen"
   (canRemove)="closeStartScreen()"
+  (cancel)="backToCategoryScreen()"
   [category]="showingCategory"></app-start-task>
 
 <app-help
