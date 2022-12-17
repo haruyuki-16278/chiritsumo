@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Category } from '../../home.interface';
 
 @Component({
   selector: 'app-start-task',
@@ -6,5 +7,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./start-task.component.scss']
 })
 export class StartTaskComponent {
+  @Input() category!: Category
+  @Input() show!: boolean
   @Output() canRemove: EventEmitter<void> = new EventEmitter()
 }

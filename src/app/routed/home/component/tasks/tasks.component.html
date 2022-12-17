@@ -2,8 +2,8 @@
   <div class="carousel-cell">
   </div>
   <div #carousel class="carousel-cell" [class.complete]="category.isComplete"  [class.center]="isCenterCategory(category)" *ngFor="let category of categories;" (click)="onClickCategory(category)">
-    <img class="category-icon" [src]="category.iconUrl">
-    <div class="category-name">{{category.name}}</div>
+    <img class="category-icon" [class.show]="show" [src]="category.iconUrl">
+    <div class="category-name" [class.show]="show">{{category.name}}</div>
   </div>
   <div class="carousel-cell">
   </div>

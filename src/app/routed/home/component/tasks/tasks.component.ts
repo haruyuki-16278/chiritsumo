@@ -1,4 +1,5 @@
-import { Component, ElementRef, EventEmitter, OnInit, Output, QueryList, ViewChildren } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, QueryList, ViewChildren } from '@angular/core';
+import { timer } from 'rxjs';
 import { Category } from '../../home.interface';
 
 
@@ -9,6 +10,9 @@ import { Category } from '../../home.interface';
 })
 export class TasksComponent implements OnInit {
   @ViewChildren('carousel') carousel!: QueryList<ElementRef<HTMLDivElement>>
+
+  @Input() show!: boolean
+  @Output() canRemove: EventEmitter<void> = new EventEmitter()
   @Output() clickCategory: EventEmitter<Category> = new EventEmitter()
 
   categories: Category[] = [
@@ -47,8 +51,10 @@ export class TasksComponent implements OnInit {
       console.warn('コンプリート済みだからダメ')
       return
     }
-    console.log('click')
-    this.clickCategory.emit(category)
+    this.show = false
+    timer(400).subscribe(() => {
+      this.clickCategory.emit(category)
+    })
   }
 
   // FIXME: NG0100

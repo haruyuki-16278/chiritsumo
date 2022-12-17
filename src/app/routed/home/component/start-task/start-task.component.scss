@@ -7,4 +7,35 @@
   width: 100vw;
 
   z-index: 10;
+
+  .relative-wrapper {
+    position: relative;
+
+    .backdrop {
+
+    }
+
+    .ui {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .category-icon {
+        width: 40vmin;
+        height: 40vmin;
+      }
+
+      .category-name {
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+      }
+    }
+  }
 }

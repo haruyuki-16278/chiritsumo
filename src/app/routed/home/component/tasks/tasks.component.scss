@@ -31,7 +31,12 @@
         aspect-ratio: 1 / 1;
         height: unset;
         width: 60%;
-        transition: width var(--transition-time);
+        transition: width var(--transition-time), transform var(--transition-time);
+        transform: scale(0);
+
+        &.show {
+          transform: scale(1);
+        }
       }
 
       &.center {
@@ -48,6 +53,11 @@
         opacity: 0;
         transition: opacity var(--transition-time);
         padding-top: 16px;
+        transition: transform var(--transition-time);
+        transform: scale(0);
+        &.show {
+          transform: scale(1);
+        }
       }
     }
   }
