@@ -24,7 +24,9 @@ export class LoginComponent implements OnInit {
     private readonly router: Router
   ) {}
 
-  ngOnInit () {}
+  ngOnInit () {
+    window.localStorage.setItem('otetsudaiLevel', '1');
+  }
 
   onClickEnterNameDone () {
     window.localStorage.setItem('name', this.name)
