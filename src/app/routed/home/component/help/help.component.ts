@@ -13,6 +13,7 @@ export class HelpComponent {
   @Output() canRemove: EventEmitter<void> = new EventEmitter()
 
   mission!: Mission
+  beanKnowledge!: string
 
   constructor (
     private zone: NgZone
@@ -33,6 +34,8 @@ export class HelpComponent {
   ngOnInit (): void {
     const random = Math.floor(Math.random() * this.category.missions.length)
     this.mission = this.category.missions[random]
+    const beanRandom = Math.floor(Math.random() * this.mission.beanKnowledges.length)
+    this.beanKnowledge = this.mission.beanKnowledges[beanRandom];
   }
 
   onEndClick (): void {
