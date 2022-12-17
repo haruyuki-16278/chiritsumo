@@ -36,6 +36,13 @@ export class HelpComponent {
   }
 
   onEndClick (): void {
+    this.updateTiritumo()
     this.canRemove.emit()
+  }
+
+  private updateTiritumo (): void {
+    const tiritumo = Number(window.localStorage.getItem('tiritumo'))
+    if (typeof(tiritumo) !== 'number' && tiritumo === tiritumo) return
+    window.localStorage.setItem('tiritumo', (tiritumo+1).toString())
   }
 }
