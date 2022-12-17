@@ -13,4 +13,11 @@
   [show]="showHelpScreen"
   (canRemove)="closeHelpScreen()"
   [category]="showingCategory"
-  ></app-help>
+></app-help>
+
+<app-result
+  *ngIf="showResultScreen && showingCategory"
+  [show]="showResultScreen"
+  (canRemove)="closeResultScreen()"
+  [category]="showingCategory"
+></app-result>
