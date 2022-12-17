@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 type Calendar = {
   isFinished: boolean
@@ -9,35 +9,19 @@ type Calendar = {
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss']
 })
-export class CalendarComponent {
+export class CalendarComponent implements OnInit {
   /**
    * お手伝いレベル
    */
-  level = window.localStorage.getItem('otetsudaiLevel')
+  level = window.localStorage.getItem('otetsudaiLevel') ?? 1
 
-  calendar: Calendar[] = [{
-    isFinished: true
-  }, {
-    isFinished: true
-  }, {
-    isFinished: true
-  }, {
-    isFinished: false
-  }, {
-    isFinished: false
-  }, {
-    isFinished: false
-  }, {
-    isFinished: false
-  }, {
-    isFinished: false
-  }, {
-    isFinished: false
-  }, {
-    isFinished: false
-  }, {
-    isFinished: false
-  }, {
-    isFinished: false
-  }]
+  tiritumo = window.localStorage.getItem('tiritumo') ?? 0
+
+  calendar: Calendar[] = []
+
+  ngOnInit () {
+    for (let i = 0; i < 12; i++) {
+      this.calendar.push({isFinished: i < this.tiritumo})
+    }
+  }
 }
