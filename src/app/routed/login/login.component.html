@@ -5,14 +5,16 @@
 </ng-container>
 
 <ng-template #selectUserIcon>
+  <div class="description">{{ name }} さんだね</div>
   <div class="description">あいこんをきめてね</div>
   <div class="icons-wrapper">
-    <div class="icon"
-        *ngFor="let selectableIconUrl of selectableIconUrlList"
-        [class.selected]="selectableIconUrl === iconUrl"
-        (click)="onClickIcon(selectableIconUrl)">
-      {{ selectableIconUrl }}
-    </div>
+    <img
+      class="icon"
+      *ngFor="let selectableIconUrl of selectableIconUrlList"
+      [class.selected]="selectableIconUrl === iconUrl"
+      (click)="onClickIcon(selectableIconUrl)"
+      [src]="selectableIconUrl"
+    />
   </div>
   <button class="select-icon-done" [disabled]="iconUrl === ''" (click)="onClickSelectIconDone()">はじめる</button>
 </ng-template>
