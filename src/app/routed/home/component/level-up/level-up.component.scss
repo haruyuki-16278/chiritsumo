@@ -1,0 +1,41 @@
+:host {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+
+  z-index: 20;
+
+  .relative-wrapper {
+    position: relative;
+
+    .backdrop {
+      position: absolute;
+      background-color: #000000;
+      width: 100vw;
+      height: 100vh;
+      top: 100vh;
+      left: 0;
+
+      transition: top var(--transition-time);
+
+      &.show {
+        top: 0;
+      }
+    }
+
+    .ui {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

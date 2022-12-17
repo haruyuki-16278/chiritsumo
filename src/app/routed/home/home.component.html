@@ -28,3 +28,9 @@
   (canRemove)="closeResultScreen()"
   [category]="showingCategory"
 ></app-result>
+
+<app-level-up
+ *ngIf="showLvUpDialog"
+ [show]="showLvUpDialog"
+ (canRemove)="closeLevelUpDialog()">
+</app-level-up>
