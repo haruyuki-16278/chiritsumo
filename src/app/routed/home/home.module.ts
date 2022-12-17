@@ -3,11 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
+import { ProfileComponent } from './component/profile/profile.component';
+import { TasksComponent } from './component/tasks/tasks.component';
 
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    ProfileComponent,
+    TasksComponent
   ],
   imports: [
     CommonModule,
