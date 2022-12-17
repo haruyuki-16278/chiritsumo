@@ -14,16 +14,15 @@
     .backdrop {
       position: absolute;
       background-color: #98EE43;
-      width: 300vmax;
-      height: 300vmax;
-      top: 0;
+      width: 100vw;
+      height: 100vh;
+      top: 100vh;
       left: 0;
 
-      transition: opacity var(--transition-time);
-      opacity: 0;
+      transition: top var(--transition-time);
 
       &.show {
-        opacity: 1;
+        top: 0;
       }
     }
 

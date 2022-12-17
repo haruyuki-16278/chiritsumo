@@ -26,9 +26,6 @@ export class StartTaskComponent {
   }
 
   onStartClick (): void {
-    this.show = false
-    timer(400).subscribe(() => {
-      this.canRemove.emit()
-    })
+    this.canRemove.emit()
   }
 }

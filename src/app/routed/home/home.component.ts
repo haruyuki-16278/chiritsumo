@@ -28,11 +28,13 @@ export class HomeComponent {
   }
 
   closeStartScreen (): void {
-    this.showCategoriesScreen = false
-    this.showStartScreen = false
     this.showHelpScreen = true
-    this.showResultScreen = false
-    this.cdRef.detectChanges()
+    timer(500).subscribe(() => {
+      this.showCategoriesScreen = false
+      this.showStartScreen = false
+      this.showResultScreen = false
+      this.cdRef.detectChanges()
+    })
   }
 
   closeHelpScreen (): void {
