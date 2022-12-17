@@ -1,7 +1,6 @@
 <ng-container *ngIf="!nameEntered; else selectUserIcon">
   <div>なまえをおしえてね</div>
   <input type="text" [(ngModel)]="name"/>
-  <div>{{ name }}</div>
   <button (click)="onClickEnterNameDone()">なまえをきめたよ</button>
 </ng-container>
 
@@ -14,7 +13,6 @@
       {{ iconUrl }}
     </div>
   </div>
-  <div>{{ iconUrl }}</div>
   <button (click)="onClickSelectIconDone()">はじめる</button>
 </ng-template>
 
