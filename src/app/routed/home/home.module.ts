@@ -5,6 +5,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { TasksComponent } from './component/tasks/tasks.component';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { TasksComponent } from './component/tasks/tasks.component';
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    IvyCarouselModule
   ]
 })
 export class HomeModule { }
