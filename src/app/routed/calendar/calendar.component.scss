@@ -29,3 +29,24 @@
 .stamp {
   width: 80px;
 }
+
+.cancel-button {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  transition: opacity var(--transition-time);
+  opacity: 1;
+  border-radius: 16px;
+  background-color: transparent;
+  border-color: white;
+  color: white;
+  border: solid 4px white;
+  font-weight: bold;
+  font-size: 18px;
+  width: 38px;
+  height: 38px;
+
+  z-index: 30;
+  display: grid;
+  place-items: center;
+}
