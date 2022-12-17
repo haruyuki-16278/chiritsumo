@@ -27,14 +27,52 @@
       align-items: center;
 
       .category-icon {
-        width: 40vmin;
-        height: 40vmin;
+        height: 0vmin;
+        width: 0vmin;
+        opacity: 0;
+        transition: width var(--transition-time), height var(--transition-time), opacity var(--transition-time);
+
+        &.show {
+          opacity: 1;
+          width: 40vmin;
+          height: 40vmin;
+        }
       }
 
       .category-name {
         font-size: 24px;
         font-weight: bold;
         color: white;
+
+        transform: scale(0);
+        opacity: 0;
+        transition: transform var(--transition-time), opacity var(--transition-time);
+
+        padding: 24px 0;
+
+        &.show {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .start-button {
+        border-radius: 16px;
+        background-color: transparent;
+        border-color: white;
+        color: white;
+        border: solid 4px white;
+
+        height: 0;
+        width: 0;
+        opacity: 0;
+        transition: width var(--transition-time), height var(--transition-time), opacity var(--transition-time);
+
+        &.show {
+          opacity: 1;
+          height: 60px;
+          width: 500px;
+        }
       }
     }
   }
