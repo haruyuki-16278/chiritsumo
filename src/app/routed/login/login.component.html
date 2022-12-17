@@ -1,1 +1,20 @@
-<p>login works!</p>
+<ng-container *ngIf="!nameEntered; else selectUserIcon">
+  <div>なまえをおしえてね</div>
+  <input type="text" [(ngModel)]="name"/>
+  <div>{{ name }}</div>
+  <button (click)="onClickEnterNameDone()">なまえをきめたよ</button>
+</ng-container>
+
+<ng-template #selectUserIcon>
+  <div>あいこんをきめてね</div>
+  <div class="icons-wrapper">
+    <div class="icon"
+        *ngFor="let iconUrl of selectableIconUrlList"
+        (click)="onClickIcon(iconUrl)">
+      {{ iconUrl }}
+    </div>
+  </div>
+  <div>{{ iconUrl }}</div>
+  <button (click)="onClickSelectIconDone()">はじめる</button>
+</ng-template>
+
