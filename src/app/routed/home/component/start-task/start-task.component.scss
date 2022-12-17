@@ -12,7 +12,19 @@
     position: relative;
 
     .backdrop {
+      position: absolute;
+      background-color: #69C7FA;
+      width: 300vmax;
+      height: 300vmax;
+      top: 0;
+      left: 0;
 
+      transition: opacity var(--transition-time);
+      opacity: 0;
+
+      &.show {
+        opacity: 1;
+      }
     }
 
     .ui {
