@@ -1,1 +1,12 @@
-<p>calendar works!</p>
+<div class="container">
+  <h3 class="title">おてつだいレベル: {{ level }}</h3>
+
+  <ul class="stamps">
+    <li *ngFor="let item of calendar">
+      <div class="circle">
+        <img *ngIf="item.isFinished" src="assets/stamp.png" alt="" class="stamp">
+      </div>
+    </li>
+  </ul>
+</div>
+
