@@ -43,4 +43,11 @@ export class TasksComponent implements OnInit {
   ngOnInit (): void {
   }
 
+  onClickCategory (category: Category): void {
+    console.log('click')
+  }
+
+  isCenterCategory (category: Category): boolean {
+    return true
+  }
 }

@@ -1,8 +1,12 @@
 :host {
   display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
 
   carousel {
-    height: 500px !important;
+    height: 100vh !important;
+    width: 100vw;
 
     .carousel-cell {
       .category-icon {

@@ -1,7 +1,7 @@
 <carousel [cellsToShow]="3" [arrows]="false">
   <div class="carousel-cell">
   </div>
-  <div class="carousel-cell" *ngFor="let category of categories">
+  <div class="carousel-cell" *ngFor="let category of categories" (click)="onClickCategory(category)">
     <img class="category-icon" [src]="category.iconUrl">
     <div>{{category.name}}</div>
   </div>
