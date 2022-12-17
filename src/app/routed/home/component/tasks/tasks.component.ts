@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 
 interface Category {
   iconUrl: string
@@ -16,9 +16,11 @@ interface Category {
   styleUrls: ['./tasks.component.scss']
 })
 export class TasksComponent implements OnInit {
+  @ViewChildren('carousel') carousel!: QueryList<ElementRef<HTMLDivElement>>
+
   categories: Category[] = [
     {
-      iconUrl: 'hoge',
+      iconUrl: 'assets/categories/clean.png',
       name: '掃除',
       isComplete: false,
       missions: [
@@ -28,7 +30,7 @@ export class TasksComponent implements OnInit {
         }
       ]
     }, {
-      iconUrl: 'hoge',
+      iconUrl: 'assets/categories/senntaku.png',
       name: '分別',
       isComplete: true,
       missions: [
@@ -44,10 +46,23 @@ export class TasksComponent implements OnInit {
   }
 
   onClickCategory (category: Category): void {
+    if (!this.isCenterCategory(category)) {
+      console.warn('センターにないからだめ')
+      return
+    }
     console.log('click')
   }
 
+  // FIXME: NG0100
   isCenterCategory (category: Category): boolean {
-    return true
+    const categoryIndex = this.categories.findIndex(c => c.name === category.name)
+    if (categoryIndex < 0) return false
+    const categoryElement = this.carousel?.toArray()[categoryIndex]
+    if (!categoryElement) return false
+
+    const rect = categoryElement.nativeElement.getBoundingClientRect()
+
+    const centerPos = window.innerWidth / 2
+    return rect.x < centerPos && centerPos < rect.x + rect.width
   }
 }
