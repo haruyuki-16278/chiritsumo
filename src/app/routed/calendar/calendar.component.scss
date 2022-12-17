@@ -1,0 +1,31 @@
+.container {
+  display: grid;
+  place-items: center;
+  padding: 40px;
+}
+
+.title {
+  font-size: 48px;
+  color: white;
+}
+
+.stamps {
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 40px 80px;
+  list-style: none;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: white;
+  display: grid;
+  place-items: center;
+}
+
+.stamp {
+  width: 80px;
+}
