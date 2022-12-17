@@ -1,14 +1,6 @@
 import { Component, ElementRef, EventEmitter, OnInit, Output, QueryList, ViewChildren } from '@angular/core';
+import { Category } from '../../home.interface';
 
-interface Category {
-  iconUrl: string
-  name: string
-  isComplete: boolean
-  missions: {
-    beanKnowledges: string[]
-    title: string
-  }[]
-}
 
 @Component({
   selector: 'app-tasks',
@@ -49,6 +41,10 @@ export class TasksComponent implements OnInit {
   onClickCategory (category: Category): void {
     if (!this.isCenterCategory(category)) {
       console.warn('センターにないからだめ')
+      return
+    }
+    if (category.isComplete) {
+      console.warn('コンプリート済みだからダメ')
       return
     }
     console.log('click')

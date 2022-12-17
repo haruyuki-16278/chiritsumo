@@ -6,13 +6,15 @@ import { HomeComponent } from './home.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { TasksComponent } from './component/tasks/tasks.component';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { StartTaskComponent } from './component/start-task/start-task.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     ProfileComponent,
-    TasksComponent
+    TasksComponent,
+    StartTaskComponent
   ],
   imports: [
     CommonModule,

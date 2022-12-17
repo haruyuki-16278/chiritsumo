@@ -1,3 +1,5 @@
 
 <app-profile></app-profile>
-<app-tasks></app-tasks>
+<app-tasks (clickCategory)="onClickCategory($event)"></app-tasks>
+
+<app-start-task *ngIf="showStartScreen" (canRemove)="closeStartScreen()"></app-start-task>
