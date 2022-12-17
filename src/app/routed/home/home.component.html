@@ -1,6 +1,12 @@
 
-<app-profile></app-profile>
+<app-profile class="profile"></app-profile>
 <app-tasks (clickCategory)="onClickCategory($event)" [show]="showCategoriesScreen"></app-tasks>
+
+<div class="tetyo" routerLink="/calendar">
+  <img src="assets/otetudai.svg" alt="">
+  <p>おてつだい手帳</p>
+</div>
+
 
 <app-start-task
   *ngIf="showStartScreen && showingCategory"

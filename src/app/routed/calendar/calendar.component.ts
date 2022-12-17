@@ -13,8 +13,8 @@ export class CalendarComponent {
   /**
    * お手伝いレベル
    */
-  level = 1
-  
+  level = window.localStorage.getItem('otetsudaiLevel')
+
   calendar: Calendar[] = [{
     isFinished: true
   }, {
