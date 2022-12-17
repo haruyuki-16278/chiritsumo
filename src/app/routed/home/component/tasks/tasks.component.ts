@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, QueryList, ViewChildren } from '@angular/core';
 
 interface Category {
   iconUrl: string
@@ -17,6 +17,7 @@ interface Category {
 })
 export class TasksComponent implements OnInit {
   @ViewChildren('carousel') carousel!: QueryList<ElementRef<HTMLDivElement>>
+  @Output() clickCategory: EventEmitter<Category> = new EventEmitter()
 
   categories: Category[] = [
     {
@@ -51,6 +52,7 @@ export class TasksComponent implements OnInit {
       return
     }
     console.log('click')
+    this.clickCategory.emit(category)
   }
 
   // FIXME: NG0100
