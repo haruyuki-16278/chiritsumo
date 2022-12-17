@@ -1,0 +1,15 @@
+
+
+<div class="relative-wrapper">
+  <div class="backdrop" [class.show]="show"></div>
+  <div class="ui">
+    <div class="mission-title" [class.show]="show" [innerHTML]="mission.title"></div>
+    <div class="mame-area" [class.show]="show">
+      <div class="mame-label">
+        <div class="text">豆知識</div>
+      </div>
+      <div class="mame" [innerHTML]="mission.beanKnowledges[0]"></div>
+    </div>
+    <button [class.show]="show" class="end-button" (click)="onEndClick()">おわり！</button>
+  </div>
+</div>

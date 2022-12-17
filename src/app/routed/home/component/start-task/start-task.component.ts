@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, NgZone, Output, SimpleChanges } from '@angular/core';
-import { timer } from 'rxjs';
+import { take, timer } from 'rxjs';
 import { Category } from '../../home.interface';
 
 @Component({
@@ -19,7 +19,7 @@ export class StartTaskComponent {
   ngOnChanges (changes: SimpleChanges): void {
     if (changes['show'].currentValue === true) {
       this.show = false
-      this.zone.onMicrotaskEmpty.subscribe(() => {
+      this.zone.onMicrotaskEmpty.pipe(take(1)).subscribe(() => {
         this.show = true
       })
     }

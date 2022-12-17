@@ -7,3 +7,10 @@
   [show]="showStartScreen"
   (canRemove)="closeStartScreen()"
   [category]="showingCategory"></app-start-task>
+
+<app-help
+  *ngIf="showHelpScreen && showingCategory"
+  [show]="showHelpScreen"
+  (canRemove)="closeHelpScreen()"
+  [category]="showingCategory"
+  ></app-help>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { timer } from 'rxjs';
 import { Category } from './home.interface';
 
 @Component({
@@ -23,5 +24,13 @@ export class HomeComponent {
     this.showCategoriesScreen = false
     this.showStartScreen = false
     this.showHelpScreen = true
+  }
+
+  closeHelpScreen (): void {
+    timer(400).subscribe(() => {
+      this.showCategoriesScreen = false
+      this.showStartScreen = false
+      this.showHelpScreen = false
+    })
   }
 }
