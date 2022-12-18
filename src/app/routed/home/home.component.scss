@@ -3,6 +3,11 @@
 }
 
 .profile {
+  @media screen and (max-width: 450px) {
+    top: 16px;
+    left: 16px;
+  }
+
   position: absolute;
   top: 70px;
   left: 60px;

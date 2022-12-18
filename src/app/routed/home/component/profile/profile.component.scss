@@ -1,12 +1,30 @@
 :host {
-  width: 394px;
-  height: 151px;
+  @media screen and (min-width: 450px) {
+    --profile-component-width: 394px;
+    --profile-component-height: 151px;
+    --user-icon-size: 120px;
+    --user-info-font-size: 20px;
+  }
+  @media screen and (max-width: 450px) {
+    --profile-component-width: 140px;
+    --profile-component-height: 120px;
+    --user-icon-size: 46px;
+    --user-info-font-size: 14px;
+
+    border-radius: 22px;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  width: var(--profile-component-width);
+  height: var(--profile-component-height);
   display: flex;
   align-items: center;
 
   .user-icon-wrapper {
-    width: 151px;
-    height: 151px;
+    width: var(--profile-component-height);
+    height: var(--profile-component-height);
     border-radius: 100vh;
     display: flex;
     align-items: center;
@@ -15,8 +33,8 @@
     z-index: 1;
 
     .user-icon {
-      width: 120px;
-      height: 120px;
+      width: var(--user-icon-size);
+      height: var(--user-icon-size);
       border-radius: 100vh;
       background-color: lightgray;
       background-size: cover;
@@ -25,6 +43,13 @@
   }
 
   .user-info-container {
+    @media screen and (max-width: 450px) {
+      width: fit-content;
+      background: none;
+      margin-left: 0;
+      padding-left: 0;
+      align-items: center;
+    }
     margin-left: -40px;
     width: 281px;
     height: 100px;
@@ -35,7 +60,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    font-size: 20px;
+    font-size: var(--user-info-font-size);
     font-weight: bold;
 
     .otetsudai-level {
