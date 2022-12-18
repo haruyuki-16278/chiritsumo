@@ -1,4 +1,6 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { timer } from 'rxjs';
 
 type Calendar = {
   isFinished: boolean
@@ -7,7 +9,20 @@ type Calendar = {
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
-  styleUrls: ['./calendar.component.scss']
+  styleUrls: ['./calendar.component.scss'],
+  animations: [
+    trigger('enter', [
+      state('show', style({
+        opacity: 1
+      })),
+      state('hidden', style({
+        opacity: 0
+      })),
+      transition('hidden => show', [
+        animate('0.5s')
+      ]),
+    ])
+  ]
 })
 export class CalendarComponent implements OnInit {
   /**
@@ -19,9 +34,17 @@ export class CalendarComponent implements OnInit {
 
   calendar: Calendar[] = []
 
+  isShow = false
+
   ngOnInit () {
     for (let i = 0; i < 12; i++) {
       this.calendar.push({isFinished: i < this.tiritumo})
     }
+  }
+
+  ngAfterViewInit() {
+    // timer(1000).subscribe(() => {
+      this.isShow = true
+    // })
   }
 }

@@ -1,14 +1,17 @@
-<a class="cancel-button" routerLink="/home">X</a>
+<div class="animation" [@enter]="isShow ? 'show' : 'hidden'">
+  <a class="cancel-button" routerLink="/home">X</a>
 
-<div class="container">
-  <h3 class="title">おてつだいレベル: {{ level }}</h3>
+  <div class="container">
+    <h3 class="title">おてつだいレベル: {{ level }}</h3>
 
-  <ul class="stamps">
-    <li *ngFor="let item of calendar">
-      <div class="circle">
-        <img *ngIf="item.isFinished" src="assets/stamp.png" alt="" class="stamp">
-      </div>
-    </li>
-  </ul>
+    <ul class="stamps">
+      <li *ngFor="let item of calendar">
+        <div class="circle">
+          <img *ngIf="item.isFinished" src="assets/stamp.png" alt="" class="stamp">
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
+
 
