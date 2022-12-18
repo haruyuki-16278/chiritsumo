@@ -23,7 +23,7 @@ export class ResultComponent {
   ) {}
 
   ngOnInit (): void {
-    const stamps = ['cat', 'chiritsumo', 'dog', 'muscle', 'nico', 'popper', 'start'].map(v => `assets/stamps/${v}.png`)
+    const stamps = ['cat', 'chiritsumo', 'dog', 'muscle', 'nico', 'popper', 'star'].map(v => `assets/stamps/${v}.png`)
     this.stampUrl = stamps[Math.floor(Math.random() * stamps.length)]
   }
 
