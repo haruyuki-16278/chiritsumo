@@ -1,4 +1,16 @@
 :host{
+  @media screen and (max-width: 450px) {
+    --description-font-size: 32px;
+    --name-input-area-width: 70%;
+    --selectable-icon-size: 56px;
+  }
+
+  @media screen and (min-width: 450px) {
+    --description-font-size: 48px;
+    --name-input-area-width: 368px;
+    --selectable-icon-size: 160px;
+  }
+
   width: 100%;
   height: 100%;
   display: flex;
@@ -8,12 +20,12 @@
   color: white;
 
   .description {
-    font-size: 48px;
+    font-size: var(--description-font-size);
     font-weight: bold;
   }
 
   input {
-    width: 368px;
+    width: var(--name-input-area-width);
     height: 77px;
     margin-top: 148px;
     padding: 0 12px;
@@ -31,7 +43,8 @@
   }
 
   button {
-    width: 521px;
+    width: 80%;
+    max-width: 521px;
     height: 69px;
     margin-top: var(--button-margin-top);
     border: 4px solid white;
@@ -64,8 +77,8 @@
     column-gap: 45px;
 
     .icon {
-      width: 160px;
-      height: 160px;
+      width: var(--selectable-icon-size);
+      height: var(--selectable-icon-size);
       border-radius: 100vh;
       background-color: white;
       background-size: cover;
@@ -73,7 +86,8 @@
       transition: all 0.2s ease-in-out;
 
       &.selected {
-        transform: scale(1.1)
+        transform: scale(1.3);
+        box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
       }
     }
   }
