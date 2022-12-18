@@ -37,6 +37,16 @@ export class TasksService {
         },
       ]
     }, {
+      iconUrl: 'assets/categories/bunbetu.png',
+      name: 'ごみのぶんべつ[その２]',
+      isComplete: false,
+      missions: [
+        {
+          title: 'もえるごみのなかにぎゅうにゅうパックがはいっていないかたしかめよう',
+          beanKnowledges: ['うらがわがぎんいろだったらじつはもえるゴミなんだよ']
+        },
+      ]
+    }, {
       iconUrl: 'assets/categories/gomidashi.png',
       name: 'ごみだし',
       isComplete: false,
@@ -48,13 +58,34 @@ export class TasksService {
             'だんぼーるはとかしてリサイクルされるよ',
             'だんぼーるはほぼぜんぶリサイクルされているよ'
           ],
-        }, {
+        }
+      ]
+    }, {
+      iconUrl: 'assets/categories/gomidashi.png',
+      name: 'ごみだし[その２]',
+      isComplete: false,
+      missions: [
+        {
           title: 'しんぶんしをまとめよう',
           beanKnowledges: ['あめとゆきのひにはださないでね', 'ちらしはざっしといっしょにまとめてね']
-        }, {
+        }
+      ]
+    }　,{
+      iconUrl: 'assets/categories/gomidashi.png',
+      name: 'ごみだし[その３]',
+      isComplete: false,
+      missions: [
+        {
           title: 'いらないふくをまとめよう',
           beanKnowledges: ['あめとゆきのひにはださないでね', 'まとめたふくはがいこくのひとたちにプレゼントされるよ']
-        }, {
+        }
+      ]
+    },{
+      iconUrl: 'assets/categories/gomidashi.png',
+      name: 'ごみだし[その4]',
+      isComplete: false,
+      missions: [
+        {
           title: 'あきかんをまとめよう',
           beanKnowledges: ['ふたもあきかんといっしょにだそう', 'プルトップははずさずにそのままだそう', 'つぶさずにだそう']
         }
@@ -71,14 +102,28 @@ export class TasksService {
             'えひめけんではながいろうかをぞうきんがけするレースがあるよ',
             'ほうきはへいあんじだいからつかわれはじめたよ'
           ]
-        }, {
+        }
+      ]
+    }, {
+      iconUrl: 'assets/categories/clean.png',
+      name: 'おそうじ[その２]',
+      isComplete: false,
+      missions: [
+        {
           title: 'じぶんのへやをきれいにしよう',
           beanKnowledges: [
             'ぞうきんはえどじだいからつかわれはじめたよ',
             'えひめけんではながいろうかをぞうきんがけするレースがあるよ',
             'ほうきはへいあんじだいからつかわれはじめたよ'
           ]
-        }, {
+        }
+      ]
+    }, {
+      iconUrl: 'assets/categories/clean.png',
+      name: 'おそうじ[その３]',
+      isComplete: false,
+      missions: [
+        {
           title: 'おふろをきれいにしよう',
           beanKnowledges: [
             'ぞうきんはえどじだいからつかわれはじめたよ',
