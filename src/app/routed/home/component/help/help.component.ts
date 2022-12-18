@@ -40,6 +40,7 @@ export class HelpComponent {
 
   onEndClick (): void {
     this.updateTiritumo()
+    this.category.isComplete = true
     this.canRemove.emit()
   }
 
