@@ -50,6 +50,11 @@
       }
 
       .category-name {
+        @media screen and (max-width: 450px) {
+          font-size: 18px;
+          line-height: 1.2;
+          height: 44px;
+        }
         color: white;
         font-size: 32px;
         font-weight: bold;
