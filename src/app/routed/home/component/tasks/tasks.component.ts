@@ -1,6 +1,7 @@
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, QueryList, ViewChildren } from '@angular/core';
 import { timer } from 'rxjs';
 import { Category } from '../../home.interface';
+import { TasksService } from '../../service/tasks.service';
 
 
 @Component({
@@ -15,75 +16,12 @@ export class TasksComponent implements OnInit {
   @Output() canRemove: EventEmitter<void> = new EventEmitter()
   @Output() clickCategory: EventEmitter<Category> = new EventEmitter()
 
-  categories: Category[] = [
-    {
-      iconUrl: 'assets/categories/bunbetu.png',
-      name: 'ごみのぶんべつ',
-      isComplete: false,
-      missions: [
-        {
-          title: 'もえるごみのなかにトレーがはいっていないかたしかめよう',
-          beanKnowledges: ['なっとうのパックはもえるごみ！', 'つまようじがかんたんにささったらリサイクルできるトレーだよ']
-        }, {
-          title: 'もえるごみのなかにぎゅうにゅうパックがはいっていないかたしかめよう',
-          beanKnowledges: ['うらがわがぎんいろだったらじつはもえるゴミなんだよ']
-        },
-      ]
-    }, {
-      iconUrl: 'assets/categories/gomidashi.png',
-      name: 'ごみだし',
-      isComplete: false,
-      missions: [
-        {
-          title: 'だんぼーるをまとめよう',
-          beanKnowledges: [
-            'あめとゆきのひにはださないでね',
-            'だんぼーるはとかしてリサイクルされるよ',
-            'だんぼーるはほぼぜんぶリサイクルされているよ'
-          ],
-        }, {
-          title: 'しんぶんしをまとめよう',
-          beanKnowledges: ['あめとゆきのひにはださないでね', 'ちらしはざっしといっしょにまとめてね']
-        }, {
-          title: 'いらないふくをまとめよう',
-          beanKnowledges: ['あめとゆきのひにはださないでね', 'まとめたふくはがいこくのひとたちにプレゼントされるよ']
-        }, {
-          title: 'あきかんをまとめよう',
-          beanKnowledges: ['ふたもあきかんといっしょにだそう', 'プルトップははずさずにそのままだそう', 'つぶさずにだそう']
-        }
-      ]
-    }, {
-      iconUrl: 'assets/categories/clean.png',
-      name: 'おそうじ',
-      isComplete: false,
-      missions: [
-        {
-          title: 'リビングにきれいにしよう',
-          beanKnowledges: [
-            'ぞうきんはえどじだいからつかわれはじめたよ',
-            'えひめけんではながいろうかをぞうきんがけするレースがあるよ',
-            'ほうきはへいあんじだいからつかわれはじめたよ'
-          ]
-        }, {
-          title: 'じぶんのへやをきれいにしよう',
-          beanKnowledges: [
-            'ぞうきんはえどじだいからつかわれはじめたよ',
-            'えひめけんではながいろうかをぞうきんがけするレースがあるよ',
-            'ほうきはへいあんじだいからつかわれはじめたよ'
-          ]
-        }, {
-          title: 'おふろをきれいにしよう',
-          beanKnowledges: [
-            'ぞうきんはえどじだいからつかわれはじめたよ',
-            'えひめけんではながいろうかをぞうきんがけするレースがあるよ',
-            'ほうきはへいあんじだいからつかわれはじめたよ'
-          ]
-        }, 
-      ]
-    }
-  ]
+  constructor (
+    private tasksService: TasksService
+  ) {}
 
   ngOnInit (): void {
+    this.tasksService.restore()
   }
 
   onClickCategory (category: Category): void {
@@ -103,7 +41,7 @@ export class TasksComponent implements OnInit {
 
   // FIXME: NG0100
   isCenterCategory (category: Category): boolean {
-    const categoryIndex = this.categories.findIndex(c => c.name === category.name)
+    const categoryIndex = this.tasksService.categories.findIndex(c => c.name === category.name)
     if (categoryIndex < 0) return false
     const categoryElement = this.carousel?.toArray()[categoryIndex]
     if (!categoryElement) return false
@@ -112,5 +50,9 @@ export class TasksComponent implements OnInit {
 
     const centerPos = window.innerWidth / 2
     return rect.x < centerPos && centerPos < rect.x + rect.width
+  }
+
+  get categories (): Category[] {
+    return this.tasksService.categories
   }
 }

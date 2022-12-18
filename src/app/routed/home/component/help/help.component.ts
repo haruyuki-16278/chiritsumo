@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, NgZone, Output, SimpleChanges } from '@angular/core';
 import { take } from 'rxjs';
 import { Category, Mission } from '../../home.interface';
+import { TasksService } from '../../service/tasks.service';
 
 @Component({
   selector: 'app-help',
@@ -16,7 +17,8 @@ export class HelpComponent {
   beanKnowledge!: string
 
   constructor (
-    private zone: NgZone
+    private zone: NgZone,
+    private tasksService: TasksService
   ) {}
 
   ngOnChanges (changes: SimpleChanges): void {
@@ -41,6 +43,7 @@ export class HelpComponent {
   onEndClick (): void {
     this.updateTiritumo()
     this.category.isComplete = true
+    this.tasksService.save()
     this.canRemove.emit()
   }
 
