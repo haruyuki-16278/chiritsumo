@@ -15,10 +15,17 @@ export class ResultComponent {
 
   showStamp = false
 
+  stampUrl = ''
+
   constructor (
     private zone: NgZone,
     private confetti: ConfettiService
   ) {}
+
+  ngOnInit (): void {
+    const stamps = ['cat', 'chiritsumo', 'dog', 'muscle', 'nico', 'popper', 'start'].map(v => `assets/stamps/${v}.png`)
+    this.stampUrl = stamps[Math.floor(Math.random() * stamps.length)]
+  }
 
   ngOnChanges (changes: SimpleChanges): void {
     if (changes['show'].currentValue === true) {

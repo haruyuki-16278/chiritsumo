@@ -5,7 +5,7 @@
     <div class="icon-area" [class.show]="show">
       <img class="category-icon" [src]="category.iconUrl">
       <div class="stamp-wrapper">
-        <img class="stamp" src="assets/stamps/popper.png" [class.show]="showStamp">
+        <img class="stamp" [src]="stampUrl" [class.show]="showStamp">
       </div>
     </div>
     <div class="category-name" [class.show]="show">{{category.name}}</div>
