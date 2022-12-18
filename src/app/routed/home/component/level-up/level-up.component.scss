@@ -13,16 +13,26 @@
 
     .backdrop {
       position: absolute;
-      background-color: #000000;
       width: 100vw;
-      height: 100vh;
-      top: 100vh;
+      height: 50vh;
       left: 0;
-
       transition: top var(--transition-time);
+    }
+
+    .backdrop-top {
+      background-color: #64C5FA;
+      top: -50vh;
 
       &.show {
         top: 0;
+      }
+    }
+    .backdrop-bottom {
+      background-color: #EC667A;
+      top: 100vh;
+
+      &.show {
+        top: 50vh;
       }
     }
 
@@ -32,10 +42,38 @@
       left: 0;
       width: 100vw;
       height: 100vh;
+
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
+      .upper {
+        padding-top: 24px;
+        font-size: 60px;
+        font-weight: bold;
+        color: white;
+        opacity: 0;
+        transition: opacity var(--transition-time);
+        &.show {
+          opacity: 1;
+        }
+      }
+
+      .lower {
+        font-size: 60px;
+        font-weight: bold;
+        color: white;
+        .number {
+          font-size: 80px;
+        }
+        color: white;
+        opacity: 0;
+        transition: opacity var(--transition-time);
+        &.show {
+          opacity: 1;
+        }
+      }
     }
   }
 }

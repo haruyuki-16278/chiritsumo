@@ -15,4 +15,8 @@ export class ProfileComponent implements OnInit {
     this.iconUrl = window.localStorage.getItem('iconUrl') ?? '';
     this.otetsudaiLevel = Number(window.localStorage.getItem('otetsudaiLevel')) ?? 1;
   }
+
+  ngAfterViewChecked (): void {
+    this.otetsudaiLevel = Number(window.localStorage.getItem('otetsudaiLevel')) ?? 1;
+  }
 }

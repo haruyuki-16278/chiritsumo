@@ -13,6 +13,7 @@ export class HomeComponent {
   showHelpScreen = false
   showResultScreen = false
   showLvUpDialog = false
+
   showingCategory: Category | undefined
 
   constructor (
@@ -20,7 +21,6 @@ export class HomeComponent {
   ) {}
 
   ngOnInit (): void {
-    this.levelUp()
   }
 
   onClickCategory (category: Category): void {
@@ -67,7 +67,11 @@ export class HomeComponent {
     this.showResultScreen = false
     this.cdRef.detectChanges()
 
-    this.levelUp()
+    const tiritumo = Number(window.localStorage.getItem('tiritumo'))
+    if (typeof(tiritumo) !== 'number' && tiritumo === tiritumo) return
+    if (tiritumo % 4 === 0) {
+      this.levelUp()
+    }
   }
 
   closeLevelUpDialog (): void {
