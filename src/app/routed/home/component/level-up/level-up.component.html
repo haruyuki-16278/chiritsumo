@@ -1,0 +1,13 @@
+
+
+<div class="relative-wrapper">
+  <div class="backdrop backdrop-top" [class.show]="show"></div>
+  <div class="backdrop backdrop-bottom" [class.show]="show"></div>
+  <div class="ui">
+    <div class="upper" [class.show]="show">LEVEL UP</div>
+    <div class="lower" [class.show]="show">
+      <span class="lv">LV.</span>
+      <span class="number">{{level}}</span>
+    </div>
+  </div>
+</div>

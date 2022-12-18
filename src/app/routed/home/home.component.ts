@@ -12,11 +12,16 @@ export class HomeComponent {
   showStartScreen = false
   showHelpScreen = false
   showResultScreen = false
+  showLvUpDialog = false
+
   showingCategory: Category | undefined
 
   constructor (
     private cdRef: ChangeDetectorRef
   ) {}
+
+  ngOnInit (): void {
+  }
 
   onClickCategory (category: Category): void {
     this.showCategoriesScreen = false
@@ -61,5 +66,23 @@ export class HomeComponent {
     this.showHelpScreen = false
     this.showResultScreen = false
     this.cdRef.detectChanges()
+
+    const tiritumo = Number(window.localStorage.getItem('tiritumo'))
+    if (typeof(tiritumo) !== 'number' && tiritumo === tiritumo) return
+    if (tiritumo % 4 === 0) {
+      this.levelUp()
+    }
+  }
+
+  closeLevelUpDialog (): void {
+    this.showLvUpDialog = false
+  }
+
+  private levelUp (): void {
+    const otetsudaiLevel = Number(window.localStorage.getItem('otetsudaiLevel'))
+    if (typeof(otetsudaiLevel) !== 'number' && otetsudaiLevel === otetsudaiLevel) return
+    window.localStorage.setItem('otetsudaiLevel', (otetsudaiLevel+1).toString())
+
+    this.showLvUpDialog = true
   }
 }

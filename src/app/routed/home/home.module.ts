@@ -9,6 +9,7 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { StartTaskComponent } from './component/start-task/start-task.component';
 import { HelpComponent } from './component/help/help.component';
 import { ResultComponent } from './component/result/result.component';
+import { LevelUpComponent } from './component/level-up/level-up.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ResultComponent } from './component/result/result.component';
     TasksComponent,
     StartTaskComponent,
     HelpComponent,
-    ResultComponent
+    ResultComponent,
+    LevelUpComponent
   ],
   imports: [
     CommonModule,
